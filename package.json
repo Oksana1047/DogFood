@@ -2,13 +2,13 @@
   "name": "app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "./",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "classnames": "^2.3.2",
     "formik": "^2.2.9",
+    "homepage": "https://Oksana1047.github.io/DogFood",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.6.2",
@@ -18,11 +18,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "set BUILD_PATH=./docs&& react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+"deploy": "gh-pages -d build"
   },
- 
   "browserslist": {
     "production": [
       ">0.2%",
@@ -36,6 +37,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "eslint": "^8.32.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.27.5",
