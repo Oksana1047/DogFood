@@ -1,0 +1,25 @@
+.wr {
+    background: yellow;
+    
+    height: 60px;
+    width:100%;
+    position:fixed;
+    left:0px;
+    top:0px;
+}
+
+.headerMenu {
+    display:flex;
+    list-style: none;
+    gap: 10px;
+    margin-right: 20px;
+}
+.headerMenu li:nth-child(2) {
+margin-left: auto;
+}
+.headerMenu a {
+    text-decoration: none;
+}
+.activeLink {
+    color:blueviolet;
+}

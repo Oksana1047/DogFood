@@ -1,0 +1,10 @@
+.wr {
+    background:yellow;
+   height: 120px;
+   
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    
+    width:100%;
+}
