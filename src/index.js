@@ -1,14 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import { createHashRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { Authentication } from './companents/Authentication/Authentication'
 import { Registration } from './companents/Registration/Registration'
 import { Food } from './companents/Food/Food'
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
