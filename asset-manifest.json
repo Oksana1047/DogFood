@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/DogFood/static/css/main.668b06b8.css",
-    "main.js": "/DogFood/static/js/main.5240a8bf.js",
+    "main.css": "/DogFood/static/css/main.8406d5a3.css",
+    "main.js": "/DogFood/static/js/main.a5ea21ad.js",
     "static/js/787.c1112931.chunk.js": "/DogFood/static/js/787.c1112931.chunk.js",
     "index.html": "/DogFood/index.html",
-    "main.668b06b8.css.map": "/DogFood/static/css/main.668b06b8.css.map",
-    "main.5240a8bf.js.map": "/DogFood/static/js/main.5240a8bf.js.map",
+    "main.8406d5a3.css.map": "/DogFood/static/css/main.8406d5a3.css.map",
+    "main.a5ea21ad.js.map": "/DogFood/static/js/main.a5ea21ad.js.map",
     "787.c1112931.chunk.js.map": "/DogFood/static/js/787.c1112931.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.668b06b8.css",
-    "static/js/main.5240a8bf.js"
+    "static/css/main.8406d5a3.css",
+    "static/js/main.a5ea21ad.js"
   ]
 }
