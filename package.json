@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://Oksana1047.github.io/DogFood",
   "dependencies": {
+    "@tanstack/react-query": "^4.22.4",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -18,7 +19,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-"deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test"
