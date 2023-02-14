@@ -1,17 +1,25 @@
 /* eslint-disable max-len */
 import { Link, NavLink } from 'react-router-dom'
 import classNames from 'classnames'
+import { useDispatch, useSelector } from 'react-redux'
+
 import headerStyles from './header.module.css'
-import { useAppContext } from '../../context/AppContext'
+
+import { getTokenSelector, logOut } from '../../redux/slices/userSlise'
 
 export function Header() {
-  const { removeToken, userToken } = useAppContext()
+  const userToken = useSelector(getTokenSelector)
+  const dispatch = useDispatch()
+  const handleLogOut = () => dispatch(logOut())
   return (
     <header className={headerStyles.wr}>
       <nav>
         <ul className={headerStyles.headerMenu}>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">
+
+              DogFood
+            </Link>
           </li>
           <li>
             <NavLink
@@ -36,9 +44,9 @@ export function Header() {
               className={({ isActive }) => classNames({ [headerStyles.activeLink]: isActive })}
               to="/products"
             >
-              Food
+              Каталог
             </NavLink>
-            <button className={userToken ? 'btn btn-info mx-2' : 'btn btn-light mx-2'} type="button" onClick={() => removeToken()}>Выйти</button>
+            <button className={userToken ? 'btn btn-warning mx-2' : 'btn btn-light mx-2'} type="button" onClick={handleLogOut}>Выйти</button>
           </li>
         </ul>
       </nav>

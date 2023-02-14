@@ -1,11 +1,14 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable max-len */
 import { useMutation } from '@tanstack/react-query'
 import {
   Formik, Form, Field, ErrorMessage,
 } from 'formik'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { DogFoodApiConst } from '../../api/DogFoodApi'
-import { useAppContext } from '../../context/AppContext'
+import { setNewUser } from '../../redux/slices/userSlise'
+
 import { AuthenticationFormValidationSchema } from './helpers/validator'
 
 export function Authentication() {
@@ -14,7 +17,7 @@ export function Authentication() {
     password: '',
   }
 
-  const { setNewToken } = useAppContext()
+  const dispatch = useDispatch()
 
   const navigate = useNavigate()
 
@@ -29,7 +32,9 @@ export function Authentication() {
   }) */
   const { mutateAsync, isLoading } = useMutation({
     mutationFn: (values) => DogFoodApiConst.signIn(values)
-      .then((user) => setNewToken(user.token)),
+      .then((user) => {
+        dispatch(setNewUser(user.data._id, user.token, user.data.email))
+      }),
   })
   const submitHandler = async (values) => {
     await mutateAsync(values)

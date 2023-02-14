@@ -4,17 +4,25 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 
+import { useSelector } from 'react-redux'
 import ProductItem from '../ProductItem/ProductItem'
 import { withQuery } from '../HOCs/withQuery'
 import { DogFoodApiConst } from '../../api/DogFoodApi'
-import { useAppContext } from '../../context/AppContext'
+// import { useAppContext } from '../../context/AppContext'
+
+import { Search } from '../Search/Search'
+import { getSearchSelector } from '../../redux/slices/filterSlice'
+import { getQuerySearchKey } from './utils'
+import { getTokenSelector } from '../../redux/slices/userSlise'
 
 function ProductsInner({ data }) {
-  const { products } = data
+  const products = data
+  console.log({ dataInner: data })
   return (
 
     <>
       <h1>Products</h1>
+      <Search />
       {products && (
       <ul className="d-flex p-2 flex-wrap align-items-center justify-content-around">
         {products.map((product) => (
@@ -35,7 +43,8 @@ function ProductsInner({ data }) {
 const ProductsInnerWithQuery = withQuery(ProductsInner)
 
 function Products() {
-  const { userToken } = useAppContext()
+  const userToken = useSelector(getTokenSelector)
+
   const navigate = useNavigate()
   console.log({ userToken })
   useEffect(() => {
@@ -43,14 +52,14 @@ function Products() {
       navigate('/signin')
     }
   }, [userToken])
-
+  const search = useSelector(getSearchSelector)
   const {
     data, isLoading, isError, error, refetch,
   } = useQuery({
-    queryKey: ['productsfetch'],
-    queryFn: () => DogFoodApiConst.getAllProducts(),
-
-    enabled: (userToken !== undefined) && (userToken !== ''),
+    queryKey: getQuerySearchKey(search),
+    queryFn: () => DogFoodApiConst.getAllProducts(search, userToken),
+    enabled: !!(userToken),
+    // enabled: (userToken !== undefined) && (userToken !== ''),
   })
   console.log({
     data, isLoading, isError, error, refetch,
