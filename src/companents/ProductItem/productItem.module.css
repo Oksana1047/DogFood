@@ -9,3 +9,18 @@
     color: black;
     margin: 0;
 }
+.card-body {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .product_picture {
+    width: 10rem;
+    height: 10rem;
+  }
+  
+.card__icon {
+    width: 30px;
+    height: 30px;
+  }

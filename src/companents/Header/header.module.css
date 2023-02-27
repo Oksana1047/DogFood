@@ -1,7 +1,7 @@
 .wr {
     background: yellow;
     
-    height: 60px;
+    height: 125px;
     width:100%;
     position:fixed;
     left:0px;
@@ -22,4 +22,11 @@ margin-left: auto;
 }
 .activeLink {
     color:blueviolet;
+}
+.logo {
+    margin-top: 10px;
+    width: 105px;
+    
+    
+  
 }

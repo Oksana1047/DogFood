@@ -23,11 +23,12 @@ function ProductsInner({ data }) {
     <>
       <h1>Products</h1>
       <Search />
-      {products && (
+      {products[0] && (
       <ul className="d-flex p-2 flex-wrap align-items-center justify-content-around">
         {products.map((product) => (
           <ProductItem
             key={product._id}
+            id={product._id}
             name={product.name}
             price={product.price}
             pictures={product.pictures}
@@ -35,7 +36,9 @@ function ProductsInner({ data }) {
         ))}
       </ul>
       )}
-
+      {!products[0] && products && (
+      <h5 className="card-header">По вашему запросу ничего не найдено</h5>
+      )}
     </>
 
   )

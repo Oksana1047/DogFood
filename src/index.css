@@ -15,3 +15,14 @@ code {
 .error {
   color: red;
 }
+.shop-cart-button {
+  float: right;
+  cursor: pointer;
+  transition: color 500ms ease;
+  margin-top: 10PX;
+}
+
+.shop-cart-button:hover,
+.shop-cart-button.active {
+  color: #dc3d3d;
+}

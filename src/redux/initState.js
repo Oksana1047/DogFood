@@ -3,11 +3,11 @@ import { REDUX_LS_KEY } from './constants'
 export const initState = {
   user: {
     group: '',
-    name: '',
+
     email: '',
     token: '',
   },
-
+  cart: [],
   filter: {
     search: '',
   },

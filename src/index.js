@@ -16,6 +16,7 @@ import { Main } from './companents/Main/Main'
 // import AppContextProvider from './context/AppContext'
 import Products from './companents/Products/Products'
 import { store } from './redux/store'
+import Cart from './companents/Cart/Cart'
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: 'products',
         element: <Products />,
+      },
+      {
+        path: '/cart',
+        element: <Cart />,
       },
     ],
   },
