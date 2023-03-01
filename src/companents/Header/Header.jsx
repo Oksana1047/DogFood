@@ -7,7 +7,7 @@ import { FaShoppingCart } from 'react-icons/fa'
 import headerStyles from './header.module.css'
 
 import { getTokenSelector, logOut } from '../../redux/slices/userSlise'
-import logo from '../../images/logo.jpg'
+import logo1 from '../../images/logo1.png'
 import { getAllCartProductsSelector } from '../../redux/slices/cartSlice'
 
 export function Header() {
@@ -21,8 +21,8 @@ export function Header() {
         <ul className={headerStyles.headerMenu}>
           <li>
             <Link to="/">
-              <img className={headerStyles.logo} src={logo} alt="" />
-              DogFood
+              <img className={headerStyles.logo} src={logo1} alt="" />
+
             </Link>
           </li>
           <div className={headerStyles.buttons}>
