@@ -8,8 +8,10 @@ import headerStyles from './header.module.css'
 
 import { getTokenSelector, logOut } from '../../redux/slices/userSlise'
 import logo from '../../images/logo.jpg'
+import { getAllCartProductsSelector } from '../../redux/slices/cartSlice'
 
 export function Header() {
+  const cartProducts = useSelector(getAllCartProductsSelector)
   const userToken = useSelector(getTokenSelector)
   const dispatch = useDispatch()
   const handleLogOut = () => dispatch(logOut())
@@ -44,6 +46,9 @@ export function Header() {
           </li>
           <NavLink to="/cart" className={({ isActive }) => (isActive ? 'active_link' : undefined)}>
             <FaShoppingCart className="shop-cart-button" />
+            <span className={headerStyles.number}>
+              {cartProducts.length}
+            </span>
           </NavLink>
           <li>
             <NavLink

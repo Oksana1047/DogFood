@@ -13,6 +13,9 @@
     list-style: none;
     gap: 10px;
     margin-right: 20px;
+    font-weight: 600;
+    font-size: 18px;
+  margin-top:15px ;  
 }
 .headerMenu li:nth-child(2) {
 margin-left: auto;
@@ -22,11 +25,14 @@ margin-left: auto;
 }
 .activeLink {
     color:blueviolet;
+    
 }
 .logo {
-    margin-top: 10px;
+    
     width: 105px;
     
-    
-  
+}
+.number {
+color: blue;
+font-weight: 800;
 }

@@ -4,8 +4,14 @@ class DogFoodApi {
     this.baseUrl = baseUrl
   }
 
-  getAuthorizationToken() {
-    return `Bearer ${this.token}`
+  // eslint-disable-next-line class-methods-use-this
+  getAuthorizationToken(token) {
+    return `Bearer ${token}`
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  checkToken(token) {
+    if (!token) throw new Error('Отсутствует токен')
   }
 
   async signUp(data) {
@@ -31,17 +37,19 @@ class DogFoodApi {
   }
 
   getProductsByIds(ids, token) {
+    this.checkToken(token)
     return Promise.all(ids.map((id) => fetch(`${this.baseUrl}/products/${id}`, {
       headers: {
-        authorization: `Bearer ${token}`,
+        authorization: this.getAuthorizationToken(token),
       },
     }).then((res) => res.json())))
   }
 
   async getAllProducts(search, token) {
+    this.checkToken(token)
     const response = await fetch(`${this.baseUrl}/products/search?query=${search}`, {
       headers: {
-        authorization: `Bearer ${token}`,
+        authorization: this.getAuthorizationToken(token),
       },
     })
 
