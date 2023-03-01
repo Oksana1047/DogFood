@@ -43,7 +43,7 @@ export function Registration() {
           <Field className="mb-3 form-control" name="email" placeholder="email here" type="email" />
           <ErrorMessage companent="p" className="error" name="email" />
 
-          <button type="submit" disabled={isLoading} className="btn btn-info">Зарегистрироваться</button>
+          <button type="submit" disabled={isLoading} className="btn btn-warning">Зарегистрироваться</button>
         </Form>
       </Formik>
     </>

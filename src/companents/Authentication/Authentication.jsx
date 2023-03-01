@@ -55,7 +55,7 @@ export function Authentication() {
           <Field className="mb-3 form-control" name="email" placeholder="email here" type="email" />
           <ErrorMessage companent="p" className="error" name="email" />
 
-          <button disabled={isLoading} type="submit" className="btn btn-info">Войти</button>
+          <button disabled={isLoading} type="submit" className="btn btn-warning">Войти</button>
         </Form>
       </Formik>
 

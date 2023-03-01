@@ -25,16 +25,31 @@ export function Header() {
               DogFood
             </Link>
           </li>
-
-          <li>
-            <NavLink
-              className={({ isActive }) => classNames({ [headerStyles.activeLink]: isActive })}
-              to="/signin"
-            >
-              Войти
-
-            </NavLink>
-          </li>
+          <div className={headerStyles.buttons}>
+            {userToken ? (
+              <div>
+                <Link
+                  to="/"
+                  className={headerStyles.link}
+                >
+                  <button type="button" className={headerStyles.btn} onClick={handleLogOut}>
+                    Выйти
+                  </button>
+                </Link>
+              </div>
+            ) : (
+              <div>
+                <Link
+                  to="/signin"
+                  className={headerStyles.link}
+                >
+                  <button type="button" className={headerStyles.btn}>
+                    Войти
+                  </button>
+                </Link>
+              </div>
+            )}
+          </div>
           <li>
             <NavLink
               className={({ isActive }) => classNames({ [headerStyles.activeLink]: isActive })}
@@ -57,7 +72,7 @@ export function Header() {
             >
               Каталог
             </NavLink>
-            <button className={userToken ? 'btn btn-warning mx-2' : 'btn btn-light mx-2'} type="button" onClick={handleLogOut}>Выйти</button>
+
           </li>
         </ul>
       </nav>

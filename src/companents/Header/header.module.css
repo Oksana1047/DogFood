@@ -36,3 +36,12 @@ margin-left: auto;
 color: blue;
 font-weight: 800;
 }
+.link {
+    margin-left: 900px;
+}
+.btn {
+    background-color: yellow;
+    border-radius: 5px;
+    color: blue;
+    border-color: blue;
+}
