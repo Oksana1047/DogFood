@@ -1,30 +1,44 @@
 import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 
+import { useSearchParams } from 'react-router-dom'
 import { changeSearchFilter } from '../../redux/slices/filterSlice'
 import { useDebounce } from '../hooks/useDebounce'
 
-export function Search() {
-  const [search, setSearch] = useState('')
+export
+function Search() {
+  const [searchParams, setSearchParams] = useSearchParams()
+  const [search, setSearch] = useState(() => {
+    const searchValueFromQuery = searchParams.get('q')
+
+    return searchValueFromQuery ?? ''
+  })
   const dispatch = useDispatch()
+  const debouncedSearchValue = useDebounce(search, 750)
 
-  const debouncedSearchValue = useDebounce(search, 1000)
-
-  const changeSearchHandler = (e) => {
+  const searchHandler = (e) => {
     const newSearchValue = e.target.value
-
     setSearch(newSearchValue)
+    setSearchParams({
+      ...Object.fromEntries(searchParams.entries()),
+      q: newSearchValue,
+    })
   }
 
   useEffect(() => {
     dispatch(changeSearchFilter(debouncedSearchValue))
-  }, [debouncedSearchValue, dispatch])
+  }, [dispatch, debouncedSearchValue])
 
   return (
     <input
       placeholder="Поиск"
+      type="text"
+      className="form-control"
+      style={{ width: '500px', margin: '24px auto' }}
       value={search}
-      onChange={changeSearchHandler}
+      onChange={searchHandler}
     />
   )
 }
+
+export default Search

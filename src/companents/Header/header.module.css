@@ -1,25 +1,31 @@
 .wr {
     background: yellow;
-    
+    display: flex;
     height: 125px;
     width:100%;
+    
     position:fixed;
+    display:flex;
     left:0px;
     top:0px;
 }
 
 .headerMenu {
+   
     display:flex;
+    
+    justify-content: flex-end;
     list-style: none;
     gap: 10px;
     margin-right: 20px;
     font-weight: 600;
     font-size: 18px;
   margin-top:15px ;  
+  
 }
 .headerMenu li:nth-child(2) {
-margin-left: auto;
-}
+    margin-left: auto;
+    }
 .headerMenu a {
     text-decoration: none;
 }
@@ -38,11 +44,15 @@ font-weight: 800;
 }
 .link {
     
-    margin-left: 1050px;
+    justify-content: flex-end;
 }
 .btn {
     background-color: yellow;
     border-radius: 5px;
     color: blue;
     border-color: blue;
+    display: flex;
+    justify-content: flex-end;
+   margin-left: 1000px;
+   
 }

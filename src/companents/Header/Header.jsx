@@ -16,14 +16,18 @@ export function Header() {
   const dispatch = useDispatch()
   const handleLogOut = () => dispatch(logOut())
   return (
+
     <header className={headerStyles.wr}>
       <nav>
+
         <ul className={headerStyles.headerMenu}>
+
           <li>
             <Link to="/">
               <img className={headerStyles.logo} src={logo1} alt="" />
 
             </Link>
+
           </li>
           <div className={headerStyles.buttons}>
             {userToken ? (

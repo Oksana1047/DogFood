@@ -56,13 +56,13 @@ function CartItem({
         </div>
         <div className="d-flex flex-row gap-4 px-3">
           <div className="d-flex flex-row gap-2 px-2 align-items-center">
-            <button type="button" className="btn btn-light" onClick={decrementCountHandler}>
+            <button type="button" className="btn btn-light" onClick={decrementCountHandler} disabled={count === 1}>
               -
 
             </button>
 
-            <h4>{count}</h4>
-            <button type="button" className="btn btn-light" onClick={incrementCountHandler}>
+            <span>{ count }</span>
+            <button type="button" className="btn btn-light" onClick={incrementCountHandler} disabled={count === stock}>
               +
             </button>
           </div>
