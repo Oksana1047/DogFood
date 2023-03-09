@@ -37,8 +37,8 @@ export function Cart() {
     return allPickedProducts
   }
 
-  const getCartProductById = (idItem) => cartProducts.find((product) => product._id === idItem)
-  const getCartStateProductById = (idItem) => cart.find((product) => product.id === idItem)
+  const getCartProductById = (idItem) => cartProducts.filter((product) => product._id === idItem)
+  const getCartStateProductById = (idItem) => cart.filter((product) => product.id === idItem)
   const pickAllProductsHandler = () => {
     if (!isAllCardPicked()) dispatch(pickAllProducts())
     else dispatch(notPickAllProducts())
