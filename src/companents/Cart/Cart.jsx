@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable max-len */
 import { useQuery } from '@tanstack/react-query'
+import { useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { DogFoodApiConst } from '../../api/DogFoodApi'
@@ -37,8 +38,21 @@ export function Cart() {
     return allPickedProducts
   }
 
-  const getCartProductById = (idItem) => cartProducts.filter((product) => product._id === idItem)
-  const getCartStateProductById = (idItem) => cart.filter((product) => product.id === idItem)
+  const getCartProductById = useCallback((idItem) => {
+    const res = cartProducts.find((product) => product._id === idItem)
+    if (res) {
+      return res
+    }
+    return false
+  }, [cartProducts])
+
+  const getCartStateProductById = useCallback((idItem) => {
+    const res = cart.find((product) => product.id === idItem)
+    if (res) {
+      return res
+    }
+    return false
+  }, [cart])
   const pickAllProductsHandler = () => {
     if (!isAllCardPicked()) dispatch(pickAllProducts())
     else dispatch(notPickAllProducts())
