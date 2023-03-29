@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { REDUX_LS_KEY } from './constants'
+import { DOGFOOD_CART_LS_KEY, REDUX_LS_KEY } from './constants'
 
 import { getInitState } from './initState'
 
@@ -12,8 +12,16 @@ export const store = configureStore({
 
 })
 
-store.subscribe(() => {
-  const currentState = store.getState()
+store.subscribe(() => window.localStorage.setItem(REDUX_LS_KEY, JSON.stringify(store.getState())))
 
-  window.localStorage.setItem(REDUX_LS_KEY, JSON.stringify(currentState))
+store.subscribe(() => {
+  const cartsFromLS = window.localStorage.getItem(DOGFOOD_CART_LS_KEY)
+  const currentState = store.getState()
+  const parsedCartsFromLS = cartsFromLS ? JSON.parse(cartsFromLS) : {}
+  if (currentState.user.id) {
+    window.localStorage.setItem(DOGFOOD_CART_LS_KEY, JSON.stringify({
+      ...parsedCartsFromLS,
+      [currentState.user.id]: currentState.cart,
+    }))
+  }
 })

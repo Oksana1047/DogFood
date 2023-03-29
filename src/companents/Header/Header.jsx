@@ -3,12 +3,12 @@ import { Link, NavLink } from 'react-router-dom'
 import classNames from 'classnames'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { FaShoppingCart } from 'react-icons/fa'
+import { FaHeart, FaShoppingCart } from 'react-icons/fa'
 import headerStyles from './header.module.css'
 
-import { getTokenSelector, logOut } from '../../redux/slices/userSlise'
 import logo1 from '../../images/logo1.png'
 import { getAllCartProductsSelector } from '../../redux/slices/cartSlice'
+import { getTokenSelector, logOut } from '../../redux/slices/userSlice'
 
 export function Header() {
   const cartProducts = useSelector(getAllCartProductsSelector)
@@ -63,6 +63,10 @@ export function Header() {
 
             </NavLink>
           </li>
+          <NavLink to="/favorites" className={({ isActive }) => (isActive ? 'active_link' : undefined)}>
+            <FaHeart className="shop-heart-button" />
+
+          </NavLink>
           <NavLink to="/cart" className={({ isActive }) => (isActive ? 'active_link' : undefined)}>
             <FaShoppingCart className="shop-cart-button" />
             <span className={headerStyles.number}>

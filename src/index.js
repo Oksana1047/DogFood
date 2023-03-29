@@ -7,6 +7,7 @@ import {
   QueryClient, QueryClientProvider,
 } from '@tanstack/react-query'
 import { Provider } from 'react-redux'
+
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { Authentication } from './companents/Authentication/Authentication'
@@ -17,6 +18,7 @@ import { Main } from './companents/Main/Main'
 import Products from './companents/Products/Products'
 import { store } from './redux/store'
 import Cart from './companents/Cart/Cart'
+import FavoritesPage from './companents/Favorites/Favorites'
 
 const router = createBrowserRouter([
   {
@@ -42,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: '/cart',
         element: <Cart />,
+      },
+      {
+        path: '/favorites',
+        element: <FavoritesPage />,
       },
     ],
   },

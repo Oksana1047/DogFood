@@ -1,1 +1,2 @@
 export const REDUX_LS_KEY = 'REDUX_LS_KEY'
+export const DOGFOOD_CART_LS_KEY = 'DOGFOOD_CART_LS_KEY'

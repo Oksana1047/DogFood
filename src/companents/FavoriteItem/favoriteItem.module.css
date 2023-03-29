@@ -1,0 +1,27 @@
+.product_picture {
+    width: 10rem;
+    height: 10rem;
+  }
+  
+  .number__icon {
+    width: 18px;
+    height: 18px;
+  }
+  .button {
+    background-color: #ee9f0b;
+    color: black;
+padding: 8px;
+border-radius: 16px;
+border: 1px solid;
+size: 1px;
+margin-top: 8px;
+margin-right: 8px;
+cursor: pointer;
+  }
+  .card {
+    size: 1px;
+    background-size: contain;
+    width: 30px;
+    height: 30px
+    
+  }

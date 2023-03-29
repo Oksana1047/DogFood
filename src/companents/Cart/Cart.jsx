@@ -9,7 +9,8 @@ import { DogFoodApiConst } from '../../api/DogFoodApi'
 import {
   clearCart, getAllCartProductsSelector, notPickAllProducts, pickAllProducts,
 } from '../../redux/slices/cartSlice'
-import { getTokenSelector } from '../../redux/slices/userSlise'
+import { getTokenSelector } from '../../redux/slices/userSlice'
+
 import CartItem from '../CartItem/CartItem'
 import { Loader } from '../Loader/Loader'
 import { getQueryCartKey } from '../Products/utils'

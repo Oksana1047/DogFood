@@ -11,6 +11,7 @@ export const initState = {
   filter: {
     search: '',
   },
+  favorites: [],
 }
 
 export const getInitState = () => {

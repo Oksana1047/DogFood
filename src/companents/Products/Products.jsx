@@ -13,7 +13,7 @@ import { DogFoodApiConst } from '../../api/DogFoodApi'
 import { Search } from '../Search/Search'
 import { getSearchSelector } from '../../redux/slices/filterSlice'
 import { getQuerySearchKey } from './utils'
-import { getTokenSelector } from '../../redux/slices/userSlise'
+import { getTokenSelector } from '../../redux/slices/userSlice'
 
 function ProductsInner({ data }) {
   const products = data

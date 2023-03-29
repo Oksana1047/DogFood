@@ -7,7 +7,7 @@ import {
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { DogFoodApiConst } from '../../api/DogFoodApi'
-import { setNewUser } from '../../redux/slices/userSlise'
+import { setNewUser } from '../../redux/slices/userSlice'
 
 import { AuthenticationFormValidationSchema } from './helpers/validator'
 
