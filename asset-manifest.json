@@ -1,17 +1,20 @@
 {
   "files": {
-    "main.css": "/DogFood/static/css/main.d2daa828.css",
-    "main.js": "/DogFood/static/js/main.eaca8560.js",
+    "main.css": "/DogFood/static/css/main.0484df4c.css",
+    "main.js": "/DogFood/static/js/main.497ee099.js",
     "static/js/787.c1112931.chunk.js": "/DogFood/static/js/787.c1112931.chunk.js",
     "static/media/logo3.jpg": "/DogFood/static/media/logo3.60b25eedbbc96505e60b.jpg",
     "static/media/logo1.png": "/DogFood/static/media/logo1.114e8233afe5556bbc65.png",
+    "static/media/carticon.png": "/DogFood/static/media/carticon.3f2c90a601251586d463.png",
     "index.html": "/DogFood/index.html",
-    "main.d2daa828.css.map": "/DogFood/static/css/main.d2daa828.css.map",
-    "main.eaca8560.js.map": "/DogFood/static/js/main.eaca8560.js.map",
+    "static/media/smallHeart.svg": "/DogFood/static/media/smallHeart.2a77cfbc59e8a6a69d3b846d30dbfb99.svg",
+    "static/media/done.svg": "/DogFood/static/media/done.02d7da186335c01cc5e81e3f606eeacc.svg",
+    "main.0484df4c.css.map": "/DogFood/static/css/main.0484df4c.css.map",
+    "main.497ee099.js.map": "/DogFood/static/js/main.497ee099.js.map",
     "787.c1112931.chunk.js.map": "/DogFood/static/js/787.c1112931.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d2daa828.css",
-    "static/js/main.eaca8560.js"
+    "static/css/main.0484df4c.css",
+    "static/js/main.497ee099.js"
   ]
 }
